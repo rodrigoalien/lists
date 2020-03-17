@@ -15,7 +15,14 @@ class _HomeState extends State<Home> {
       body: Container(
         padding: EdgeInsets.all(20),
         child: ListView.builder(
-          itemBuilder: null
+          itemCount: 5,
+          itemBuilder: (context, indice){
+            print('Item(t): $indice');
+            return ListTile(
+              title: Text('Item: $indice'),
+              subtitle: Text('subtítulo'),
+            );
+          }
         ),
       ),
     );
