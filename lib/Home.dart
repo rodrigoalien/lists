@@ -20,6 +20,9 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
+    _loadItens();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Lista'),
