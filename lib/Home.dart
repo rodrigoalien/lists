@@ -8,8 +8,16 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: ListView.builder(
+          itemBuilder: null
+        ),
+      ),
     );
   }
 }
