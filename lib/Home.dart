@@ -6,6 +6,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  List _itens = [];
+
+  void _loadItens(){
+    for(int i = 0; i < 10; i++){
+      Map<String, dynamic> item = Map();
+      item['titulo'] = 'Título $i';
+      item['subtitulo'] = 'Descrição $i';
+      _itens.add(item);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,11 +27,11 @@ class _HomeState extends State<Home> {
       body: Container(
         padding: EdgeInsets.all(20),
         child: ListView.builder(
-          itemCount: 5,
+          itemCount: _itens.length,
           itemBuilder: (context, indice){
-            print('Item(t): $indice');
+            print('Item(t): ${_itens[indice].toString()}');
             return ListTile(
-              title: Text('Item: $indice'),
+              title: Text('Item: ${indice.toString()}'),
               subtitle: Text('subtítulo'),
             );
           }
